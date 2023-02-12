@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 async function generateImage(prompt) {
-    await axios.post('https://api.openai.com/v1/images/generations', JSON.stringify({
+    return await axios.post('https://api.openai.com/v1/images/generations', JSON.stringify({
         'prompt': `${prompt}`,
         'n': 1,
         'size': '256x256'

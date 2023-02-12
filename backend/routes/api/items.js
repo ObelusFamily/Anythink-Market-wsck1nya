@@ -151,9 +151,7 @@ router.post("/", auth.required, function(req, res, next) {
       item.seller = user;
 
       if(!item.image) {
-        console.log(`item.image: ${item.image}`)
         item.image = await generateImage(item.title);
-        console.log(`AFTER item.image: ${item.image}`)
       }
 
       return item.save().then(function() {
