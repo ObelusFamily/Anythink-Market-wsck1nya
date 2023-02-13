@@ -150,7 +150,7 @@ router.post("/", auth.required, function (req, res, next) {
 
       return item.save().then(function () {
         sendEvent('item_created', { item: req.body.item })
-        return res.json({ item: item.toJSONFor(user), isVerified: user.isVerified });
+        return res.json({ item: item.toJSONFor(user) });
       });
     })
     .catch(next);
